@@ -13,7 +13,9 @@ import {
   HiOutlineGlobeAsiaAustralia,
   HiOutlineRocketLaunch,
   HiOutlineDevicePhoneMobile,
-  HiOutlineGlobeAlt, // <-- Add this import
+  HiOutlineGlobeAlt,
+  HiOutlineCodeBracket,
+  HiOutlineServer,
 } from "react-icons/hi2";
 
 import {
@@ -28,6 +30,8 @@ import {
 } from "react-icons/pi";
 
 import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaFacebook, FaPhone } from "react-icons/fa6";
+import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
+import { SiNextdotjs, SiDjango, SiMysql, SiPostgresql, SiMongodb, SiSqlite } from "react-icons/si";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -59,7 +63,20 @@ export const iconLibrary: Record<string, IconType> = {
   storage: PiDatabaseDuotone,
   cloud: PiCloudDuotone,
   web: HiOutlineGlobeAlt, // <-- Use the more globe-like icon for "web"
-  mobile: HiOutlineDevicePhoneMobile,
+  mobile: HiOutlineDevicePhoneMobile, // <-- Mobile development icon
+  // --- Technology Icons ---
+  react: FaReact,
+  nextjs: SiNextdotjs,
+  html5: FaHtml5,
+  css3: FaCss3Alt,
+  django: SiDjango,
+  laravel: FaLaravel,
+  nodejs: FaNodeJs,
+  python: FaPython,
+  mysql: SiMysql,
+  postgresql: SiPostgresql,
+  mongodb: SiMongodb,
+  sqlite: SiSqlite,
 };
 
 export type IconLibrary = typeof iconLibrary;
