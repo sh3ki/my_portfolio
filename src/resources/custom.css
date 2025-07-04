@@ -52,3 +52,23 @@
   --scheme-neutral-600-50: rgba(137,152,159,0.5);
   /*
 }*/
+
+/* Testimonials Section Styles */
+.testimonial-card {
+  will-change: transform, box-shadow;
+}
+.testimonial-card:hover,
+.testimonial-card:focus-visible {
+  transform: translateY(-8px) scale(1.035);
+  box-shadow: 0 8px 32px 0 rgba(60,137,238,0.13);
+  border-color: var(--brand-alpha-weak);
+}
+.testimonial-grid {
+  /* Responsive grid handled inline, but you can override here if needed */
+}
+@media (max-width: 700px) {
+  .testimonial-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.2rem !important;
+  }
+}

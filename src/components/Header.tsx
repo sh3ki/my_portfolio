@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, blog, work, gallery } from "@/resources";
+import { routes, display, person, about, services, gallery, projects } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -94,38 +94,36 @@ export const Header = () => {
                     selected={pathname === "/about"}
                   />
                 </>
-              )}
-              {routes["/work"] && (
+              )}{routes["/projects"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
-                    prefixIcon="grid"
-                    href="/work"
-                    label={work.label}
-                    selected={pathname.startsWith("/work")}
+                    prefixIcon="book"
+                    href="/projects"
+                    label={projects.label}
+                    selected={pathname.startsWith("/projects")}
                   />
                   <ToggleButton
                     className="s-flex-show"
-                    prefixIcon="grid"
-                    href="/work"
-                    selected={pathname.startsWith("/work")}
+                    prefixIcon="projects"
+                    href="/projects"
+                    selected={pathname.startsWith("/projects")}
                   />
                 </>
-              )}
-              {routes["/blog"] && (
+              )}{routes["/services"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
-                    prefixIcon="book"
-                    href="/blog"
-                    label={blog.label}
-                    selected={pathname.startsWith("/blog")}
+                    prefixIcon="service"
+                    href="/services"
+                    label={services.label}
+                    selected={pathname.startsWith("/services")}
                   />
                   <ToggleButton
                     className="s-flex-show"
-                    prefixIcon="book"
-                    href="/blog"
-                    selected={pathname.startsWith("/blog")}
+                    prefixIcon="service"
+                    href="/services"
+                    selected={pathname.startsWith("/services")}
                   />
                 </>
               )}
@@ -133,14 +131,14 @@ export const Header = () => {
                 <>
                   <ToggleButton
                     className="s-flex-hide"
-                    prefixIcon="gallery"
+                    prefixIcon="cpu"
                     href="/gallery"
                     label={gallery.label}
                     selected={pathname.startsWith("/gallery")}
                   />
                   <ToggleButton
                     className="s-flex-show"
-                    prefixIcon="gallery"
+                    prefixIcon="cpu"
                     href="/gallery"
                     selected={pathname.startsWith("/gallery")}
                   />

@@ -27,11 +27,16 @@ import {
   PiPaintBrushDuotone,
   PiDatabaseDuotone,
   PiCloudDuotone,
+  PiToolboxDuotone,
+  PiCpuDuotone
 } from "react-icons/pi";
 
-import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaFacebook, FaPhone } from "react-icons/fa6";
+import { FaDiscord, FaGithub, FaLinkedin, FaX, FaThreads, FaFacebook, FaPhone, FaMedal, FaCubes, FaToolbox } from "react-icons/fa6";
 import { FaReact, FaHtml5, FaCss3Alt, FaLaravel, FaNodeJs, FaPython, FaDatabase } from "react-icons/fa";
 import { SiNextdotjs, SiDjango, SiMysql, SiPostgresql, SiMongodb, SiSqlite } from "react-icons/si";
+import { TbLayoutGridAdd } from "react-icons/tb";
+import { RiBug2Line } from "react-icons/ri";
+import { VscBeaker } from "react-icons/vsc";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -39,8 +44,9 @@ export const iconLibrary: Record<string, IconType> = {
   email: HiEnvelope,
   globe: HiOutlineGlobeAsiaAustralia,
   person: PiUserCircleDuotone,
-  grid: HiOutlineGlobeAsiaAustralia, // (unchanged)
   book: PiBookBookmarkDuotone,
+  service: PiToolboxDuotone,
+  cpu: PiCpuDuotone,
   openLink: HiOutlineLink,
   calendar: HiCalendarDays,
   home: PiHouseDuotone,
@@ -51,12 +57,15 @@ export const iconLibrary: Record<string, IconType> = {
   github: FaGithub,
   linkedin: FaLinkedin,
   facebook: FaFacebook,
-  phone: FaPhone, // Changed from FaPhoneAlt to FaPhone for consistent sizing
+  phone: FaPhone,
   x: FaX,
   threads: FaThreads,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
   document: HiOutlineDocument,
   rocket: HiOutlineRocketLaunch,
+  layoutGridAdd: TbLayoutGridAdd,
+  bug: RiBug2Line,
+  beaker: VscBeaker,
   // Custom additions for missing icons
   chain: HiOutlineLink,
   brush: PiPaintBrushDuotone,
@@ -77,6 +86,10 @@ export const iconLibrary: Record<string, IconType> = {
   postgresql: SiPostgresql,
   mongodb: SiMongodb,
   sqlite: SiSqlite,
+  // --- Stat Card Icons ---
+  experience: FaMedal,
+  projects: FaCubes,
+  tools: FaToolbox,
 };
 
 export type IconLibrary = typeof iconLibrary;

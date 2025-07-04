@@ -6,7 +6,7 @@ const person = {
   get name() {
     return `${this.firstName} ${this.lastName}`;
   },
-  role: "Aspiring Software Engineer",
+  role: "Software Developer",
   avatar: "/images/avatar.jpg",
   email: "shekaigarcia@gmail.com",
   location: "Asia/Manila", // Timezone identifier for Philippines
@@ -16,13 +16,9 @@ const person = {
 
 const newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: (
-    <>
-      I occasionally write about design, technology, and share thoughts on the intersection of
-      creativity and engineering.
-    </>
-  ),     
+  title: "Let’s Build Something Great Together",
+  description:
+    "Have an idea, project, or business you want to bring to life? I’d love to hear about it. Reach out and let’s turn your vision into reality.",
 };
 
 const social = [
@@ -69,10 +65,6 @@ const home = {
   },
   subline: (
     <>
-      {/* Hi, I'm {person.firstName}, an aspiring software engineer and passionate full-stack developer. 
-      <br />
-      I craft robust web, mobile, and software solutions for clients worldwide—transforming visions into scalable, high-impact products. 
-      <br /> */}
       From intuitive user interfaces to powerful backend architectures, I build with precision, performance, and purpose. 
       <br />
       Ready to build your boldest idea into reality.
@@ -101,55 +93,64 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Hi, I'm {person.firstName}, an aspiring software engineer and passionate full-stack developer. 
+        Hi, I'm {person.firstName}, a passionate full-stack software developer. <br></br>
         I craft robust web, mobile, and software solutions for clients worldwide—transforming visions into scalable, high-impact products. 
         With a focus on performance, usability, and clean code, I bring both creativity and technical expertise to every project.
       </>
     ),
   },
-  work: {
-    display: true, // set to false to hide this section
-    title: "Projects & Achievements",
-    projects: [
+  coreStrengths: {
+    display: true,
+    title: "Core Strengths",
+    description: "",
+    items: [
       {
-        title: "Personal Portfolio Website",
-        timeframe: "2024",
-        description: (
-          <>
-            Designed and developed a personal portfolio using Next.js and Once UI to showcase my skills, projects, and achievements.
-          </>
-        ),
-        technologies: ["Next.js", "React", "Once UI"],
-        images: [
-          {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Portfolio Website Screenshot",
-            width: 16,
-            height: 9,
-          },
-        ],
+        icon: "BsLayers",
+        title: "Full-Stack Versatility",
+        description:
+          "Comfortable across the stack — from responsive frontend interfaces to robust backend services and database design.",
       },
       {
-        title: "Open Source Contributor",
-        timeframe: "2023",
-        description: (
-          <>
-            Contributed bug fixes and new features to several open-source projects on GitHub, collaborating with developers worldwide.
-          </>
-        ),
-        technologies: ["JavaScript", "GitHub"],
-        images: [],
+        icon: "layoutGridAdd",
+        title: "Component-Driven Frontend Development",
+        description:
+          "I build reusable, maintainable components using modern frameworks like React and Next.js.",
       },
       {
-        title: "Hackathon Finalist",
-        timeframe: "2022",
-        description: (
-          <>
-            Built a real-time chat application during a 48-hour hackathon, reaching the finals among 100+ teams.
-          </>
-        ),
-        technologies: ["Node.js", "Socket.io", "React"],
-        images: [],
+        icon: "HiOutlineLink",
+        title: "Clean, Scalable APIs",
+        description:
+          "I design and build RESTful and modular APIs that are easy to consume and built for future growth.",
+      },
+      {
+        icon: "PiFoldersDuotone",
+        title: "Database Architecture",
+        description:
+          "I design relational and NoSQL database schemas that optimize performance and maintain data integrity.",
+      },
+      {
+        icon: "FaRocket",
+        title: "DevOps-Ready Mindset",
+        description:
+          "From CI/CD pipelines to containerized deployments, I can take projects from local to live smoothly.",
+      },
+      {
+        icon: "bug",
+        title: "Debugging & Problem Solving",
+        description:
+          "I don’t just fix bugs—I trace root causes, refactor with intention, and future-proof the solution.",
+      },
+      {
+        icon: "TbDeviceMobileCode",
+        title: "Cross-Platform Thinking",
+        description:
+          "I build with the awareness that users could be on any screen, and ensure seamless experiences across devices.",
+      },
+      {
+        icon: "beaker",
+        title: "Test-Driven Development",
+        description:
+          "I write code with reliability in mind—using unit, integration, and end-to-end tests to ensure features work as intended and regressions are caught early.",
       },
     ],
   },
@@ -158,46 +159,66 @@ const about = {
     title: "Studies",
     institutions: [
       {
-        name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        name: "Polytechnic University of the Philippines",
+        description: <>Studied Bachelor of Science in Information Technology.<br></br> Consistent President's Lister.</>,
       },
       {
-        name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        name: "Manila Science High School",
+        description: <>Studied Junior and Senior High School - STEM track. <br></br> Graduated with High Honors.</>,
+      },
+      {
+        name: "Hen. Pio del Pilar Elementary School",
+        description: <>Studied Elementary School. <br></br> Graduated Salutatorian.</>,
       },
     ],
   },
   technical: {
     display: true, // set to false to hide this section
-    title: "Technical skills",
+    title: "Behind the Screens",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
+        description:  <>A sneak peek into my workspace where ideas take shape and code comes to life. <br></br> This is where I create, debug, and build the solutions that power your projects.</>,
         // optional: leave the array empty if you don't want to display images
         images: [
           {
-            src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
+            src: "/images/BTS/1.jpg",
+            alt: "image",
             width: 16,
             height: 9,
           },
           {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
+            src: "/images/BTS/2.jpg",
+            alt: "image",
             width: 16,
             height: 9,
-          },
-        ],
-      },
-      {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js + Once UI + Supabase.</>,
-        // optional: leave the array empty if you don't want to display images
-        images: [
-          {
-            src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
+          },{
+            src: "/images/BTS/3.jpg",
+            alt: "image",
+            width: 16,
+            height: 9,
+          },{
+            src: "/images/BTS/4.jpg",
+            alt: "image",
+            width: 16,
+            height: 9,
+          },{
+            src: "/images/BTS/5.jpg",
+            alt: "image",
+            width: 16,
+            height: 9,
+          },{
+            src: "/images/BTS/6.jpg",
+            alt: "image",
+            width: 16,
+            height: 9,
+          },{
+            src: "/images/BTS/7.jpg",
+            alt: "image",
+            width: 16,
+            height: 9,
+          },{
+            src: "/images/BTS/8.jpg",
+            alt: "image",
             width: 16,
             height: 9,
           },
@@ -207,22 +228,22 @@ const about = {
   },
 };
 
-const blog = {
-  path: "/blog",
-  label: "Blog",
+const services = {
+  path: "/services",
+  label: "Services",
   title: "Writing about design and tech...",
   description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  // Create new service posts by adding a new .mdx file to app/services/posts
+  // All posts will be listed on the /services route
 };
 
-const work = {
-  path: "/work",
-  label: "Work",
+const projects = {
+  path: "/projects",
+  label: "Projects",
   title: `Projects – ${person.name}`,
   description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  // Create new project pages by adding a new .mdx file to app/projects/projects
+  // All projects will be listed on the /home and /projects routes
 };
 
 const gallery = {
@@ -276,4 +297,4 @@ const gallery = {
   ],
 };
 
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, services, projects, gallery };

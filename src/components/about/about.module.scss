@@ -27,3 +27,42 @@
         align-self: center;
     }
 }
+
+.horizontalScrollGallery {
+  overflow-x: hidden;
+  overflow-y: hidden;
+  width: 100%;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 8px;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: thin;
+  scrollbar-color: var(--brand-400) var(--surface-alpha-weak);
+  position: relative;
+}
+
+.scrollingTrack {
+  display: flex;
+  width: max-content;
+  animation: scroll-horizontal 32s linear infinite;
+}
+
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.galleryImageCard {
+  min-width: 220px;
+  max-width: 320px;
+  margin-right: 12px;
+  background: var(--surface-alpha-strong);
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(60,137,238,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

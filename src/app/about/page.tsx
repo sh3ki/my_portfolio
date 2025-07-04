@@ -28,16 +28,16 @@ export async function generateMetadata() {
 }
 
 export default function About() {
-  const structure = [
+  const structure =  [
     {
       title: about.intro.title,
       display: about.intro.display,
       items: [],
     },
     {
-      title: about.work.title,
-      display: about.work.display,
-      items: about.work.projects.map((project) => project.title),
+      title: about.coreStrengths.title,
+      display: about.coreStrengths.display,
+      items: about.coreStrengths.items.map((item) => item.title),
     },
     {
       title: about.studies.title,
@@ -47,7 +47,7 @@ export default function About() {
     {
       title: about.technical.title,
       display: about.technical.display,
-      items: about.technical.skills.map((skill) => skill.title),
+      items: about.technical.skills.map((skill, idx) => `Workspace #${idx + 1}`),
     },
   ];
   return (
@@ -185,72 +185,45 @@ export default function About() {
             </Column>
           )}
 
-          {about.work.display && (
+          {about.coreStrengths.display && (
             <>
-              <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
-                {about.work.title}
+              <Heading as="h2" id={about.coreStrengths.title} variant="display-strong-s" marginBottom="m">
+                {about.coreStrengths.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
-                {about.work.projects.map((project, index) => (
-                  <Column key={`${project.title}-${index}`} fillWidth>
-                    <Flex fillWidth horizontal="space-between" vertical="end" marginBottom="4">
-                      <Text id={project.title} variant="heading-strong-l">
-                        {project.title}
-                      </Text>
-                      <Text variant="heading-default-xs" onBackground="neutral-weak">
-                        {project.timeframe}
-                      </Text>
-                    </Flex>
-                    <Text variant="body-default-s" onBackground="brand-weak" marginBottom="m">
-                      {/* project.description is a JSX element */}
-                      {project.description}
-                    </Text>
-                    {/* Optionally display technologies */}
-                    {project.technologies && project.technologies.length > 0 && (
-                      <Flex gap="8" marginBottom="m" wrap>
-                        {project.technologies.map((tech, idx) => (
-                          <Tag key={tech + idx} size="m">{tech}</Tag>
-                        ))}
+              <Column fillWidth gap="l" marginBottom="l">
+                <Flex wrap gap="24" mobileDirection="column">
+                  {about.coreStrengths.items.map((item, idx) => {
+                    const iconMap = {
+                      BsLayers: 'storage',
+                      TbLayoutGridAdd: 'grid',
+                      HiOutlineLink: 'openLink',
+                      PiFoldersDuotone: 'cloud',
+                      FaRocket: 'rocket',
+                      RiBug2Line: 'tools',
+                      TbDeviceMobileCode: 'mobile',
+                    };
+                    const iconName = iconMap[item.icon as keyof typeof iconMap] || item.icon;
+                    return (
+                      <Flex key={item.title} gap="16" vertical="start" style={{ minWidth: 220, flex: 1 }}>
+                        <Icon name={iconName} size="l" onBackground="brand-weak" style={{ minWidth: 32 }} />
+                        <Column>
+                          <Text variant="heading-strong-l">{item.title}</Text>
+                          <Text variant="body-default-m" onBackground="neutral-weak">{item.description}</Text>
+                        </Column>
                       </Flex>
-                    )}
-                    {project.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" paddingLeft="40" gap="12" wrap>
-                        {project.images.map((image, idx) => (
-                          <Flex
-                            key={idx}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
-                          >
-                            <Media
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
-                    )}
-                  </Column>
-                ))}
+                    );
+                  })}
+                </Flex>
               </Column>
             </>
           )}
 
           {about.studies.display && (
             <>
-              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m">
+              <Heading as="h2" id={about.studies.title} variant="display-strong-s" marginBottom="m" marginTop="20">
                 {about.studies.title}
               </Heading>
-              <Column fillWidth gap="l" marginBottom="40">
+              <Column fillWidth gap="l" marginBottom="xl">
                 {about.studies.institutions.map((institution, index) => (
                   <Column key={`${institution.name}-${index}`} fillWidth gap="4">
                     <Text id={institution.name} variant="heading-strong-l">
@@ -277,36 +250,132 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l">
                 {about.technical.skills.map((skill, index) => (
-                  <Column key={`${skill}-${index}`} fillWidth gap="4">
-                    <Text variant="heading-strong-l">{skill.title}</Text>
+                  <Column key={`workspace-${index}`} fillWidth gap="4">
+                    <Text variant="heading-strong-l">Behind the Scenes</Text>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
                     </Text>
                     {skill.images && skill.images.length > 0 && (
-                      <Flex fillWidth paddingTop="m" gap="12" wrap>
-                        {skill.images.map((image, index) => (
-                          <Flex
-                            key={index}
-                            border="neutral-medium"
-                            radius="m"
-                            //@ts-ignore
-                            minWidth={image.width}
-                            //@ts-ignore
-                            height={image.height}
+                      <>
+                        {/* Add gap above images for cleaner look */}
+                        <div style={{ height: 16 }} />
+                        <div style={{ width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 8 }}>
+                          <div
+                            style={{
+                              display: 'flex',
+                              width: 'max-content',
+                              animation: 'bts-scroll-horizontal 40s linear infinite',
+                              height: 160, // fixed height for desktop
+                            }}
+                            className="bts-scrolling-track"
                           >
-                            <Media
-                              enlarge
-                              radius="m"
-                              //@ts-ignore
-                              sizes={image.width.toString()}
-                              //@ts-ignore
-                              alt={image.alt}
-                              //@ts-ignore
-                              src={image.src}
-                            />
-                          </Flex>
-                        ))}
-                      </Flex>
+                            {/* Duplicate images for seamless infinite scroll */}
+                            {[...Array(2)].map((_, repeatIdx) => (
+                              <React.Fragment key={repeatIdx}>
+                                {skill.images.map((image, idx) => (
+                                  <Flex
+                                    key={repeatIdx + '-' + idx}
+                                    border="neutral-medium"
+                                    radius="m"
+                                    //@ts-ignore
+                                    minWidth={image.width}
+                                    //@ts-ignore
+                                    height={image.height}
+                                  >
+                                    <Media
+                                      enlarge
+                                      radius="m"
+                                      //@ts-ignore
+                                      sizes={image.width.toString()}
+                                      //@ts-ignore
+                                      alt={image.alt}
+                                      //@ts-ignore
+                                      src={image.src}
+                                    />
+                                  </Flex>
+                                ))}
+                              </React.Fragment>
+                            ))}
+                          </div>
+                          <style>{`
+                            @keyframes bts-scroll-horizontal {
+                              0% { transform: translateX(0); }
+                              100% { transform: translateX(-50%); }
+                            }
+                            @media (max-width: 700px) {
+                              .bts-scrolling-track {
+                                height: 120px !important;
+                              }
+                              .bts-gallery-image-card {
+                                height: 120px !important;
+                                min-width: 140px !important;
+                                max-width: 180px !important;
+                              }
+                            }
+                          `}</style>
+                        </div>
+                        {/* SECOND INFINITE SCROLLING GALLERY */}
+                        <div style={{ width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 8 }}>
+                          <div
+                            style={{
+                              display: 'flex',
+                              width: 'max-content',
+                              animation: 'bts-scroll-horizontal-2 40s linear infinite',
+                              height: 180,
+                            }}
+                            className="bts-scrolling-track-2"
+                          >
+                            {[...Array(2)].map((_, repeatIdx) => (
+                              <React.Fragment key={repeatIdx}>
+                                {[9,10,11,12,13,14,15,16].map((num, idx) => (
+                                  <Flex
+                                    key={repeatIdx + '-bts2-' + idx}
+                                    border="neutral-medium"
+                                    radius="m"
+                                    minWidth={220}
+                                    height={150}
+                                    style={{
+                                      minWidth: 220,
+                                      maxWidth: 320,
+                                      marginRight: 12,
+                                      background: 'var(--surface-alpha-strong)',
+                                      borderRadius: '1rem',
+                                      boxShadow: '0 2px 12px 0 rgba(60,137,238,0.06)',
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      overflow: 'hidden',
+                                      height: 150,
+                                      cursor: 'default', // not clickable
+                                    }}
+                                    className="bts-gallery-image-card"
+                                  >
+                                    <Media
+                                      enlarge={false}
+                                      radius="m"
+                                      sizes="220"
+                                      alt={`Behind the Scenes ${num}`}
+                                      src={`/images/BTS/${num}.jpg`}
+                                      style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: '1rem', display: 'block', pointerEvents: 'none' }}
+                                    />
+                                  </Flex>
+                                ))}
+                              </React.Fragment>
+                            ))}
+                          </div>
+                          <style>{`
+                            @keyframes bts-scroll-horizontal-2 {
+                              0% { transform: translateX(-50%); }
+                              100% { transform: translateX(0); }
+                            }
+                            @media (max-width: 700px) {
+                              .bts-scrolling-track-2 {
+                                height: 120px !important;
+                              }
+                            }
+                          `}</style>
+                        </div>
+                      </>
                     )}
                   </Column>
                 ))}
