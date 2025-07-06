@@ -313,7 +313,7 @@ export default function Home() {
                               style={{ margin: "0", width: "fit-content" }}
                               href={`work/${project.slug}`}
                             >
-                              <Text variant="body-default-s">Read case study</Text>
+                              <Text variant="body-default-s"></Text>
                             </SmartLink>
                           )}
                           {project.metadata.link && (

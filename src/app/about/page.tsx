@@ -277,10 +277,22 @@ export default function About() {
                                     key={repeatIdx + '-' + idx}
                                     border="neutral-medium"
                                     radius="m"
-                                    //@ts-ignore
-                                    minWidth={image.width}
-                                    //@ts-ignore
-                                    height={image.height}
+                                    minWidth={220}
+                                    height={150}
+                                    style={{
+                                      minWidth: 220,
+                                      maxWidth: 320,
+                                      marginRight: 12,
+                                      background: 'var(--surface-alpha-strong)',
+                                      borderRadius: '1rem',
+                                      boxShadow: '0 2px 12px 0 rgba(60,137,238,0.06)',
+                                      display: 'flex',
+                                      alignItems: 'center',
+                                      justifyContent: 'center',
+                                      overflow: 'hidden',
+                                      height: 150,
+                                      cursor: 'default', // not clickable
+                                    }}
                                   >
                                     <Media
                                       enlarge
