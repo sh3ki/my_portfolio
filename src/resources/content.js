@@ -61,7 +61,7 @@ const home = {
   featured: {
     display: true,
     title: <>Latest project: <strong className="ml-4">Fredo's Grilling</strong></>,
-    href: "/work/building-once-ui-a-customizable-design-system",
+    href: "/projects/Fredo's_Grilling",
   },
   subline: (
     <>

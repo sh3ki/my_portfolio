@@ -104,7 +104,7 @@ const editableProjects = [
     slug: "project-5",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/VaxGuard_Pro",
   },
   {
     title: "Appoint2Day | Appointment Scheduling System",
@@ -118,7 +118,7 @@ const editableProjects = [
     slug: "project-6",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/Appoint2Day",
   },
   {
     title: "SmileCare | Dental Clinic Management System",
@@ -133,7 +133,7 @@ const editableProjects = [
     slug: "project-7",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/SmileCare",
   },
   {
     title: "EduManage | School Management System",
@@ -148,7 +148,7 @@ const editableProjects = [
     slug: "project-8",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/EduManage",
   },
   {
     title: "SecureAuth | Secured Authentication System",
@@ -164,7 +164,7 @@ const editableProjects = [
     slug: "project-9",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/SecureAuth",
   },
   {
     title: "Ronald's Cuisine | Restaurant Management System",
@@ -177,7 +177,7 @@ const editableProjects = [
     slug: "project-10",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/Ronalds_Cuisine",
   },
   {
     title: "Premio | Online Motor Loan Application",
@@ -195,7 +195,7 @@ const editableProjects = [
     slug: "project-11",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/Premio",
   },
   {
     title: "Luxe Haven | Hotel Booking Management System",
@@ -209,7 +209,7 @@ const editableProjects = [
     slug: "project-12",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/Luxe_Haven",
   },
   {
     title: "EcoTrack Vision | Environmental Monitoring System",
@@ -221,7 +221,7 @@ const editableProjects = [
     slug: "project-13",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/EcoTrack_Vision",
   },
   {
     title: "Barangay Funding System",
@@ -235,7 +235,7 @@ const editableProjects = [
     slug: "project-14",
     content: "",
     avatars: [],
-    link: "/projects",
+    link: "/projects/Funding_System",
   },
 ];
 
