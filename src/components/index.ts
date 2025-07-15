@@ -9,3 +9,5 @@ export { Providers } from "@/components/Providers";
 export { ScrollToHash } from "@/components/ScrollToHash";
 export { ThemeToggle } from "@/components/ThemeToggle";
 export { CustomMDX } from "@/components/mdx";
+export { default as TechSkillCard } from "@/components/technologies/TechSkillCard";
+export { default as TechSkillsGrid } from "@/components/technologies/TechSkillsGrid";

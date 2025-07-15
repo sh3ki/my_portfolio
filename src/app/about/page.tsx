@@ -244,89 +244,88 @@ export default function About() {
                 as="h2"
                 id={about.technical.title}
                 variant="display-strong-s"
-                marginBottom="40"
+                marginBottom="20"
               >
                 {about.technical.title}
               </Heading>
-              <Column fillWidth gap="l">
+              <Column fillWidth>
                 {about.technical.skills.map((skill, index) => (
-                  <Column key={`workspace-${index}`} fillWidth gap="4">
-                    <Text variant="heading-strong-l">Behind the Scenes</Text>
+                  <Column key={`workspace-${index}`} fillWidth>
                     <Text variant="body-default-m" onBackground="neutral-weak">
                       {skill.description}
                     </Text>
                     {skill.images && skill.images.length > 0 && (
                       <>
                         {/* Add gap above images for cleaner look */}
-                        <div style={{ height: 16 }} />
-                        <div style={{ width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 8 }}>
-                          <div
-                            style={{
-                              display: 'flex',
-                              width: 'max-content',
-                              animation: 'bts-scroll-horizontal 40s linear infinite',
-                              height: 160, // fixed height for desktop
-                            }}
-                            className="bts-scrolling-track"
-                          >
-                            {/* Duplicate images for seamless infinite scroll */}
-                            {[...Array(2)].map((_, repeatIdx) => (
-                              <React.Fragment key={repeatIdx}>
-                                {skill.images.map((image, idx) => (
-                                  <Flex
-                                    key={repeatIdx + '-' + idx}
-                                    border="neutral-medium"
-                                    radius="m"
-                                    minWidth={220}
-                                    height={150}
-                                    style={{
-                                      minWidth: 220,
-                                      maxWidth: 320,
-                                      marginRight: 12,
-                                      background: 'var(--surface-alpha-strong)',
-                                      borderRadius: '1rem',
-                                      boxShadow: '0 2px 12px 0 rgba(60,137,238,0.06)',
-                                      display: 'flex',
-                                      alignItems: 'center',
-                                      justifyContent: 'center',
-                                      overflow: 'hidden',
-                                      height: 150,
-                                      cursor: 'default', // not clickable
-                                    }}
-                                  >
-                                    <Media
-                                      enlarge
-                                      radius="m"
-                                      //@ts-ignore
-                                      sizes={image.width.toString()}
-                                      //@ts-ignore
-                                      alt={image.alt}
-                                      //@ts-ignore
-                                      src={image.src}
-                                    />
-                                  </Flex>
+                            <div style={{ height: 16 }} />
+                            <div style={{ width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 8 }}>
+                              <div
+                                style={{
+                                  display: 'flex',
+                                  width: 'max-content',
+                                  animation: 'bts-scroll-horizontal 40s linear infinite',
+                                  height: 160, // fixed height for desktop
+                                }}
+                                className="bts-scrolling-track"
+                              >
+                                {/* Duplicate images for seamless infinite scroll */}
+                                {[...Array(2)].map((_, repeatIdx) => (
+                                  <React.Fragment key={repeatIdx}>
+                                    {skill.images.map((image, idx) => (
+                                      <Flex
+                                        key={repeatIdx + '-' + idx}
+                                        border="neutral-medium"
+                                        radius="m"
+                                        minWidth={220}
+                                        height={150}
+                                        style={{
+                                          minWidth: 220,
+                                          maxWidth: 320,
+                                          marginRight: 12,
+                                          background: 'var(--surface-alpha-strong)',
+                                          borderRadius: '1rem',
+                                          boxShadow: '0 2px 12px 0 rgba(60,137,238,0.06)',
+                                          display: 'flex',
+                                          alignItems: 'center',
+                                          justifyContent: 'center',
+                                          overflow: 'hidden',
+                                          height: 150,
+                                          cursor: 'default', // not clickable
+                                        }}
+                                      >
+                                        <Media
+                                          enlarge
+                                          radius="m"
+                                          //@ts-ignore
+                                          sizes={image.width.toString()}
+                                          //@ts-ignore
+                                          alt={image.alt}
+                                          //@ts-ignore
+                                          src={image.src}
+                                        />
+                                      </Flex>
+                                    ))}
+                                  </React.Fragment>
                                 ))}
-                              </React.Fragment>
-                            ))}
-                          </div>
-                          <style>{`
-                            @keyframes bts-scroll-horizontal {
-                              0% { transform: translateX(0); }
-                              100% { transform: translateX(-50%); }
-                            }
-                            @media (max-width: 700px) {
-                              .bts-scrolling-track {
-                                height: 120px !important;
-                              }
-                              .bts-gallery-image-card {
-                                height: 120px !important;
-                                min-width: 140px !important;
-                                max-width: 180px !important;
-                              }
-                            }
-                          `}</style>
-                        </div>
-                        {/* SECOND INFINITE SCROLLING GALLERY */}
+                              </div>
+                              <style>{`
+                                @keyframes bts-scroll-horizontal {
+                                  0% { transform: translateX(0); }
+                                  100% { transform: translateX(-50%); }
+                                }
+                                @media (max-width: 700px) {
+                                  .bts-scrolling-track {
+                                    height: 120px !important;
+                                  }
+                                  .bts-technologies-image-card {
+                                    height: 120px !important;
+                                    min-width: 140px !important;
+                                    max-width: 180px !important;
+                                  }
+                                }
+                              `}</style>
+                            </div>
+                        {/* SECOND INFINITE SCROLLING TECHNOLOGIES */}
                         <div style={{ width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 8 }}>
                           <div
                             style={{
@@ -360,7 +359,7 @@ export default function About() {
                                       height: 150,
                                       cursor: 'default', // not clickable
                                     }}
-                                    className="bts-gallery-image-card"
+                                    className="bts-technologies-image-card"
                                   >
                                     <Media
                                       enlarge={false}

@@ -5,7 +5,7 @@ import { useEffect, useState } from "react";
 
 import { Fade, Flex, Line, ToggleButton } from "@once-ui-system/core";
 
-import { routes, display, person, about, services, gallery, projects } from "@/resources";
+import { routes, display, person, about, services, technologies, projects } from "@/resources";
 import { ThemeToggle } from "./ThemeToggle";
 import styles from "./Header.module.scss";
 
@@ -105,7 +105,7 @@ export const Header = () => {
                   />
                   <ToggleButton
                     className="s-flex-show"
-                    prefixIcon="projects"
+                    prefixIcon="book"
                     href="/projects"
                     selected={pathname.startsWith("/projects")}
                   />
@@ -127,20 +127,20 @@ export const Header = () => {
                   />
                 </>
               )}
-              {routes["/gallery"] && (
+              {routes["/technologies"] && (
                 <>
                   <ToggleButton
                     className="s-flex-hide"
                     prefixIcon="cpu"
-                    href="/gallery"
-                    label={gallery.label}
-                    selected={pathname.startsWith("/gallery")}
+                    href="/technologies"
+                    label={technologies.label}
+                    selected={pathname.startsWith("/technologies")}
                   />
                   <ToggleButton
                     className="s-flex-show"
                     prefixIcon="cpu"
-                    href="/gallery"
-                    selected={pathname.startsWith("/gallery")}
+                    href="/technologies"
+                    selected={pathname.startsWith("/technologies")}
                   />
                 </>
               )}

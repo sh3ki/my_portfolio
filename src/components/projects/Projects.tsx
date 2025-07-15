@@ -8,7 +8,7 @@ interface ProjectsProps {
 // Editable array of 14 projects, each with multiple images and a fixed link
 const editableProjects = [
   {
-    title: "Fredo's Grilling | POS System",
+    title: "Fredo's Grilling | POS and Inventory System",
     description: "Developing a comprehensive point-of-sale solution tailored for a grilled fish business, enabling seamless order processing, inventory tracking, real-time reporting, online and cash payments, and full integration with a cash register and receipt printer, with staff using tablets and admins accessing the system on multiple devices.",
     images: [
       "/images/SS/Fredos_Grilling/1.png",
@@ -242,9 +242,9 @@ const editableProjects = [
 export function Projects({ range }: ProjectsProps) {
   // You can edit the title, description, and images for each card in the editableProjects array above
   return (
-    <Column fillWidth gap="xl" marginBottom="12" paddingX="l">
+    <Column fillWidth gap="l" paddingX="l">
       <div style={{ textAlign: "center" }}>
-        <h1 style={{ margin: 0, fontSize: "2.5rem", fontWeight: 700 }}>
+        <h1 style={{ margin: 0, fontSize: "2.5rem", fontWeight: 700, marginBottom: "1rem" }}>
           Projects Overview
         </h1>
         <p style={{ margin: 0, fontSize: "1.25rem", color: "#666" }}>

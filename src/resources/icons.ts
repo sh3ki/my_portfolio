@@ -16,7 +16,10 @@ import {
   HiOutlineGlobeAlt,
   HiOutlineCodeBracket,
   HiOutlineServer,
+  HiOutlineBolt,
 } from "react-icons/hi2";
+
+import { RiPhoneFill } from "react-icons/ri";
 
 import {
   PiHouseDuotone,
@@ -50,14 +53,14 @@ export const iconLibrary: Record<string, IconType> = {
   openLink: HiOutlineLink,
   calendar: HiCalendarDays,
   home: PiHouseDuotone,
-  gallery: PiImageDuotone,
+  technologies: PiImageDuotone,
   discord: FaDiscord,
   eye: HiOutlineEye,
   eyeOff: HiOutlineEyeSlash,
   github: FaGithub,
   linkedin: FaLinkedin,
   facebook: FaFacebook,
-  phone: FaPhone,
+  phone: RiPhoneFill,
   x: FaX,
   threads: FaThreads,
   arrowUpRightFromSquare: HiArrowTopRightOnSquare,
@@ -73,6 +76,7 @@ export const iconLibrary: Record<string, IconType> = {
   cloud: PiCloudDuotone,
   web: HiOutlineGlobeAlt, // <-- Use the more globe-like icon for "web"
   mobile: HiOutlineDevicePhoneMobile, // <-- Mobile development icon
+  speed: HiOutlineBolt, // <-- Performance/speed icon
   // --- Technology Icons ---
   react: FaReact,
   nextjs: SiNextdotjs,

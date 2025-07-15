@@ -1,0 +1,288 @@
+// TechSkillCard component with design matching ServiceCards
+
+.card {
+  perspective: 1200px;
+  width: 100%;
+  max-width: 280px;
+  min-width: 220px;
+  min-height: 180px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: 1rem;
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1.5px solid var(--neutral-alpha-weak);
+  box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  background: var(--background-elevated);
+  backdrop-filter: blur(12px);
+}
+
+.card:hover, .card:focus {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 8px 40px rgba(0, 0, 0, 0.15);
+  border-color: var(--brand-alpha-weak);
+}
+
+// Unique gradient backgrounds for TechSkillCard
+.cardBg1 {
+  background: linear-gradient(135deg, rgba(255, 120, 60, 0.12) 0%, rgba(255, 120, 60, 0.06) 100%);
+}
+
+.cardBg2 {
+  background: linear-gradient(135deg, rgba(255, 80, 180, 0.12) 0%, rgba(255, 80, 180, 0.06) 100%);
+}
+
+.cardBg3 {
+  background: linear-gradient(135deg, rgba(255, 180, 60, 0.12) 0%, rgba(255, 180, 60, 0.06) 100%);
+}
+
+.cardBg4 {
+  background: linear-gradient(135deg, rgba(120, 80, 255, 0.14) 0%, rgba(120, 80, 255, 0.07) 100%);
+}
+
+.cardBg5 {
+  background: linear-gradient(135deg, rgba(243, 73, 73, 0.14) 0%, rgba(243, 73, 73, 0.07) 100%);
+}
+
+.cardBg6 {
+  background: linear-gradient(135deg, rgba(120, 80, 255, 0.14) 0%, rgba(120, 80, 255, 0.07) 100%);
+}
+
+.cardBg7 {
+  background: linear-gradient(135deg, rgba(0, 200, 120, 0.12) 0%, rgba(0, 200, 120, 0.06) 100%);
+}
+
+.cardBg8 {
+  background: linear-gradient(135deg, rgba(120, 80, 255, 0.14) 0%, rgba(120, 80, 255, 0.07) 100%);
+}
+
+.cardBg9 {
+  background: linear-gradient(135deg, rgba(255, 120, 60, 0.16) 0%, rgba(255, 120, 60, 0.08) 100%);
+}
+
+.cardBg10 {
+  background: linear-gradient(135deg, rgba(60, 137, 238, 0.16) 0%, rgba(60, 137, 238, 0.08) 100%);
+}
+
+.cardBg11 {
+  background: linear-gradient(135deg, rgba(34, 197, 94, 0.16) 0%, rgba(34, 197, 94, 0.08) 100%);
+}
+
+.cardBg12 {
+  background: linear-gradient(135deg, rgba(160, 120, 255, 0.18) 0%, rgba(160, 120, 255, 0.09) 100%);
+}
+
+.cardContent {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.iconWrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  margin-bottom: 0.75rem;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8px);
+  flex-shrink: 0;
+}
+
+.techName {
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--foreground-default);
+  margin-bottom: 0.5rem;
+  line-height: 1.2;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+}
+
+.progressSection {
+  width: 100%;
+  margin-top: auto;
+}
+
+
+.progressBar {
+  width: 100%;
+  height: 6px;
+  background: rgba(80, 80, 80, 0.18); /* darker neutral for contrast */
+  border-radius: 3px;
+  overflow: hidden;
+  margin-bottom: 0.4rem;
+  position: relative;
+}
+
+
+
+.progressFill {
+  height: 100%;
+  border-radius: 3px;
+  transition: width 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  box-shadow: 0 0 4px 0 rgba(0,0,0,0.10);
+  opacity: 0.95;
+}
+
+// Skill level specific progress colors
+.cardBg1 .progressFill {
+  background: linear-gradient(90deg, #ff783c, #ff783c99);
+}
+.cardBg2 .progressFill {
+  background: linear-gradient(90deg, #ff50b4, #ff50b499);
+}
+.cardBg3 .progressFill {
+  background: linear-gradient(90deg, #ffb43c, #ffb43c99);
+}
+.cardBg4 .progressFill {
+  background: linear-gradient(90deg, #7850ff, #7850ff99);
+}
+.cardBg5 .progressFill {
+  background: linear-gradient(90deg, #f34949, #f3494999);
+}
+.cardBg6 .progressFill {
+  background: linear-gradient(90deg, #7850ff, #7850ff99);
+}
+.cardBg7 .progressFill {
+  background: linear-gradient(90deg, #00c878, #00c87899);
+}
+.cardBg8 .progressFill {
+  background: linear-gradient(90deg, #7850ff, #7850ff99);
+}
+.cardBg9 .progressFill {
+  background: linear-gradient(90deg, #ff783c, #ff783cbb);
+}
+.cardBg10 .progressFill {
+  background: linear-gradient(90deg, #3c89ee, #3c89eebb);
+}
+.cardBg11 .progressFill {
+  background: linear-gradient(90deg, #22c55e, #22c55ebb);
+}
+.cardBg12 .progressFill {
+  background: linear-gradient(90deg, #a078ff, #a078ffbb);
+}
+
+.progressFill::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+  0% { transform: translateX(-100%); }
+  100% { transform: translateX(100%); }
+}
+
+.progressText {
+  font-size: 0.8rem;
+  font-weight: 500;
+  color: var(--neutral-weak);
+  text-align: center;
+}
+
+// Mobile responsive
+@media (max-width: 768px) {
+  .card {
+    min-width: 160px;
+    max-width: 90vw;
+    min-height: 140px;
+    margin: 0 auto;
+  }
+  
+  .cardContent {
+    padding: 1rem 0.75rem;
+  }
+  
+  .iconWrapper {
+    width: 40px;
+    height: 40px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .techName {
+    font-size: 0.85rem;
+  }
+  
+  .progressText {
+    font-size: 0.75rem;
+  }
+  
+  .card:hover {
+    transform: none;
+    box-shadow: 0 4px 32px rgba(0, 0, 0, 0.08);
+  }
+}
+
+// Grid layout for cards
+.techGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+@media (max-width: 768px) {
+  .techGrid {
+    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    gap: 1rem;
+    margin: 1.5rem 0;
+  }
+}
+
+// Category section styling
+.categorySection {
+  margin-bottom: 3rem;
+}
+
+.categoryTitle {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground-default);
+  margin-bottom: 1.5rem;
+  text-align: center;
+  position: relative;
+  padding-bottom: 0.5rem;
+}
+
+.categoryTitle::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 3px;
+  background: linear-gradient(90deg, var(--accent-primary), var(--accent-secondary));
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .categorySection {
+    margin-bottom: 2rem;
+  }
+  
+  .categoryTitle {
+    font-size: 1.25rem;
+    margin-bottom: 1rem;
+  }
+}

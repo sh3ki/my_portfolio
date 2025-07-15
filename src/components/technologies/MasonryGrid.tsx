@@ -2,7 +2,7 @@
 
 import Masonry from "react-masonry-css";
 import { Media } from "@once-ui-system/core";
-import styles from "./Gallery.module.scss";
+import styles from "./Technologies.module.scss";
 import { technologies } from "@/resources";
 
 export default function MasonryGrid() {

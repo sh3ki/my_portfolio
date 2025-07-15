@@ -231,7 +231,7 @@ const about = {
 const services = {
   path: "/services",
   label: "Services",
-  title: "Writing about design and tech...",
+  title: `Services – ${person.name}`,
   description: `Read what ${person.name} has been up to recently`,
   // Create new service posts by adding a new .mdx file to app/services/posts
   // All posts will be listed on the /services route
@@ -246,55 +246,55 @@ const projects = {
   // All projects will be listed on the /home and /projects routes
 };
 
-const gallery = {
-  path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
+const technologies = {
+  path: "/technologies",
+  label: "Technologies",
+  title: `Technologies – ${person.name}`,
+  description: `A technology collection by ${person.name}`,
   // Images by https://lorant.one
   // These are placeholder images, replace with your own
   images: [
     {
-      src: "/images/gallery/horizontal-1.jpg",
+      src: "/images/technologies/horizontal-1.jpg",
       alt: "image",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-2.jpg",
+      src: "/images/technologies/horizontal-2.jpg",
       alt: "image",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-3.jpg",
+      src: "/images/technologies/horizontal-3.jpg",
       alt: "image",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/horizontal-4.jpg",
+      src: "/images/technologies/horizontal-4.jpg",
       alt: "image",
       orientation: "horizontal",
     },
     {
-      src: "/images/gallery/vertical-1.jpg",
+      src: "/images/technologies/vertical-1.jpg",
       alt: "image",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-2.jpg",
+      src: "/images/technologies/vertical-2.jpg",
       alt: "image",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-3.jpg",
+      src: "/images/technologies/vertical-3.jpg",
       alt: "image",
       orientation: "vertical",
     },
     {
-      src: "/images/gallery/vertical-4.jpg",
+      src: "/images/technologies/vertical-4.jpg",
       alt: "image",
       orientation: "vertical",
     },
   ],
 };
 
-export { person, social, newsletter, home, about, services, projects, gallery };
+export { person, social, newsletter, home, about, services, projects, technologies };

@@ -596,7 +596,7 @@ export default function Home() {
           <Column gap="l" align="center" fillWidth style={{ background: "var(--surface-alpha-weak)", borderRadius: "1.5rem" }}>
             <InViewShow>
               <Heading as="h2" variant="display-strong-m" align="center" style={{ letterSpacing: "-0.01em" }}>
-                Tools & Technologies | Expertise
+                Technologies & Tools | Expertise
               </Heading>
             </InViewShow>
             <InViewShow delay={0.05}>
@@ -736,7 +736,7 @@ export default function Home() {
                 <SmartLink
                   suffixIcon="arrowRight"
                   style={{ margin: "0", width: "fit-content" }}
-                  href="/tech-stack"
+                  href="/technologies"
                 >
                   <Text variant="body-default-s">View all technologies </Text>
                 </SmartLink>
