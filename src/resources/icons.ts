@@ -40,6 +40,7 @@ import { SiNextdotjs, SiDjango, SiMysql, SiPostgresql, SiMongodb, SiSqlite } fro
 import { TbLayoutGridAdd } from "react-icons/tb";
 import { RiBug2Line } from "react-icons/ri";
 import { VscBeaker } from "react-icons/vsc";
+import { MdOutlineSchool  } from "react-icons/md";
 
 export const iconLibrary: Record<string, IconType> = {
   arrowUpRight: HiArrowUpRight,
@@ -69,6 +70,7 @@ export const iconLibrary: Record<string, IconType> = {
   layoutGridAdd: TbLayoutGridAdd,
   bug: RiBug2Line,
   beaker: VscBeaker,
+  school: MdOutlineSchool ,
   // Custom additions for missing icons
   chain: HiOutlineLink,
   brush: PiPaintBrushDuotone,

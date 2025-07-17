@@ -227,14 +227,17 @@ export default function About() {
               </Heading>
               <Column fillWidth gap="l" marginBottom="xl">
                 {about.studies.institutions.map((institution, index) => (
-                  <Column key={`${institution.name}-${index}`} fillWidth gap="4">
-                    <Text id={institution.name} variant="heading-strong-l">
-                      {institution.name}
-                    </Text>
-                    <Text variant="heading-default-xs" onBackground="neutral-weak">
-                      {institution.description}
-                    </Text>
-                  </Column>
+                  <Flex key={`${institution.name}-${index}`} gap="16" vertical="start" style={{ minWidth: 220, flex: 1 }}>
+                    <Icon name="school" size="l" onBackground="brand-weak" style={{ minWidth: 32 }} />
+                    <Column fillWidth gap="4">
+                      <Text id={institution.name} variant="heading-strong-l">
+                        {institution.name}
+                      </Text>
+                      <Text variant="heading-default-xs" onBackground="neutral-weak">
+                        {institution.description}
+                      </Text>
+                    </Column>
+                  </Flex>
                 ))}
               </Column>
             </>
@@ -259,109 +262,41 @@ export default function About() {
                     {skill.images && skill.images.length > 0 && (
                       <>
                         {/* Add gap above images for cleaner look */}
-                            <div style={{ height: 16 }} />
-                            <div style={{ width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 8 }}>
-                              <div
-                                style={{
-                                  display: 'flex',
-                                  width: 'max-content',
-                                  animation: 'bts-scroll-horizontal 40s linear infinite',
-                                  height: 160, // fixed height for desktop
-                                }}
-                                className="bts-scrolling-track"
-                              >
-                                {/* Duplicate images for seamless infinite scroll */}
-                                {[...Array(2)].map((_, repeatIdx) => (
-                                  <React.Fragment key={repeatIdx}>
-                                    {skill.images.map((image, idx) => (
-                                      <Flex
-                                        key={repeatIdx + '-' + idx}
-                                        border="neutral-medium"
-                                        radius="m"
-                                        minWidth={220}
-                                        height={150}
-                                        style={{
-                                          minWidth: 220,
-                                          maxWidth: 320,
-                                          marginRight: 12,
-                                          background: 'var(--surface-alpha-strong)',
-                                          borderRadius: '1rem',
-                                          boxShadow: '0 2px 12px 0 rgba(60,137,238,0.06)',
-                                          display: 'flex',
-                                          alignItems: 'center',
-                                          justifyContent: 'center',
-                                          overflow: 'hidden',
-                                          height: 150,
-                                          cursor: 'default', // not clickable
-                                        }}
-                                      >
-                                        <Media
-                                          enlarge
-                                          radius="m"
-                                          //@ts-ignore
-                                          sizes={image.width.toString()}
-                                          //@ts-ignore
-                                          alt={image.alt}
-                                          //@ts-ignore
-                                          src={image.src}
-                                        />
-                                      </Flex>
-                                    ))}
-                                  </React.Fragment>
+                        <div style={{ height: 16 }} />
+                        <div className={styles.horizontalScrollTechnologies}>
+                          <div className={styles.scrollingTrack}>
+                            {[...Array(2)].map((_, repeatIdx) => (
+                              <React.Fragment key={repeatIdx}>
+                                {skill.images.map((image, idx) => (
+                                  <Flex
+                                    key={repeatIdx + '-' + idx}
+                                    className={styles.technologiesImageCard}
+                                  >
+                                    <Media
+                                      enlarge
+                                      radius="m"
+                                      //@ts-ignore
+                                      sizes={image.width.toString()}
+                                      //@ts-ignore
+                                      alt={image.alt}
+                                      //@ts-ignore
+                                      src={image.src}
+                                    />
+                                  </Flex>
                                 ))}
-                              </div>
-                              <style>{`
-                                @keyframes bts-scroll-horizontal {
-                                  0% { transform: translateX(0); }
-                                  100% { transform: translateX(-50%); }
-                                }
-                                @media (max-width: 700px) {
-                                  .bts-scrolling-track {
-                                    height: 120px !important;
-                                  }
-                                  .bts-technologies-image-card {
-                                    height: 120px !important;
-                                    min-width: 140px !important;
-                                    max-width: 180px !important;
-                                  }
-                                }
-                              `}</style>
-                            </div>
+                              </React.Fragment>
+                            ))}
+                          </div>
+                        </div>
                         {/* SECOND INFINITE SCROLLING TECHNOLOGIES */}
-                        <div style={{ width: '100%', overflow: 'hidden', position: 'relative', paddingBottom: 8 }}>
-                          <div
-                            style={{
-                              display: 'flex',
-                              width: 'max-content',
-                              animation: 'bts-scroll-horizontal-2 40s linear infinite',
-                              height: 180,
-                            }}
-                            className="bts-scrolling-track-2"
-                          >
+                        <div className={styles.horizontalScrollTechnologies2}>
+                          <div className={styles.scrollingTrack2}>
                             {[...Array(2)].map((_, repeatIdx) => (
                               <React.Fragment key={repeatIdx}>
                                 {[9,10,11,12,13,14,15,16].map((num, idx) => (
                                   <Flex
                                     key={repeatIdx + '-bts2-' + idx}
-                                    border="neutral-medium"
-                                    radius="m"
-                                    minWidth={220}
-                                    height={150}
-                                    style={{
-                                      minWidth: 220,
-                                      maxWidth: 320,
-                                      marginRight: 12,
-                                      background: 'var(--surface-alpha-strong)',
-                                      borderRadius: '1rem',
-                                      boxShadow: '0 2px 12px 0 rgba(60,137,238,0.06)',
-                                      display: 'flex',
-                                      alignItems: 'center',
-                                      justifyContent: 'center',
-                                      overflow: 'hidden',
-                                      height: 150,
-                                      cursor: 'default', // not clickable
-                                    }}
-                                    className="bts-technologies-image-card"
+                                    className={styles.technologiesImageCard2}
                                   >
                                     <Media
                                       enlarge={false}
@@ -376,17 +311,6 @@ export default function About() {
                               </React.Fragment>
                             ))}
                           </div>
-                          <style>{`
-                            @keyframes bts-scroll-horizontal-2 {
-                              0% { transform: translateX(-50%); }
-                              100% { transform: translateX(0); }
-                            }
-                            @media (max-width: 700px) {
-                              .bts-scrolling-track-2 {
-                                height: 120px !important;
-                              }
-                            }
-                          `}</style>
                         </div>
                       </>
                     )}

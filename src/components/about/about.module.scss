@@ -28,7 +28,8 @@
     }
 }
 
-.horizontalScrollTechnologies {
+.horizontalScrollTechnologies,
+.horizontalScrollTechnologies2 {
   overflow-x: hidden;
   overflow-y: hidden;
   width: 100%;
@@ -44,6 +45,7 @@
   display: flex;
   width: max-content;
   animation: scroll-horizontal 32s linear infinite;
+  height: 160px;
 }
 
 @keyframes scroll-horizontal {
@@ -65,4 +67,63 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  height: 150px;
+  overflow: hidden;
+}
+
+.horizontalScrollTechnologies2 {
+  @extend .horizontalScrollTechnologies;
+}
+
+.scrollingTrack2 {
+  display: flex;
+  width: max-content;
+  animation: scroll-horizontal-2 40s linear infinite;
+  height: 180px;
+}
+
+@keyframes scroll-horizontal-2 {
+  0% {
+    transform: translateX(-50%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.technologiesImageCard2 {
+  min-width: 220px;
+  max-width: 320px;
+  margin-right: 12px;
+  background: var(--surface-alpha-strong);
+  border-radius: 1rem;
+  box-shadow: 0 2px 12px 0 rgba(60,137,238,0.06);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 150px;
+  overflow: hidden;
+}
+
+// Responsive styles for mobile
+@media (max-width: 700px) {
+  .scrollingTrack {
+    height: 100px !important;
+  }
+  .scrollingTrack2 {
+    height: 100px !important;
+  }
+  .technologiesImageCard,
+  .technologiesImageCard2 {
+    min-width: 110px !important;
+    max-width: 150px !important;
+    height: 80px !important;
+    margin-right: 6px !important;
+    border-radius: 0.75rem !important;
+  }
+  .horizontalScrollTechnologies,
+  .horizontalScrollTechnologies2 {
+    margin-bottom: 1rem !important;
+    padding-bottom: 4px !important;
+  }
 }
