@@ -1,5 +1,6 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { Mailchimp } from "@/components";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Posts } from "@/components/services/Posts";
 import { baseURL, services, person, newsletter } from "@/resources";
 import ServiceCard from "@/components/services/ServiceCard";
@@ -141,6 +142,7 @@ export default function Services() {
         
       </Column>
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      <ScrollToTopButton />
     </Column>
   );
 }

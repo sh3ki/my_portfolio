@@ -1,14 +1,25 @@
 .masonryGrid {
-    display: flex;
-    margin-left: calc(-1 * var(--static-space-16));
-    width: 100%;
+  display: flex;
+  margin-left: calc(-1 * var(--static-space-16));
+  width: 100%;
 }
 
 .masonryGridColumn {
-    padding-left: var(--static-space-16);
-    background-clip: padding-box;
+  padding-left: var(--static-space-16);
+  background-clip: padding-box;
 }
 
 .gridItem {
-    margin-bottom: var(--static-space-16);
+  margin-bottom: var(--static-space-16);
+}
+
+@media (max-width: 700px) {
+  .masonryGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    margin-left: 0;
+  }
+  .masonryGridColumn {
+    padding-left: 0;
+  }
 }

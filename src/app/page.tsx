@@ -1,10 +1,13 @@
+
 "use client";
   import React, { useState, useRef, useEffect } from "react";
 
 import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta, Schema, Icon, SmartLink, Carousel, AvatarGroup } from "@once-ui-system/core";
 import { home, about, person, newsletter, baseURL, routes } from "@/resources";
 import { Mailchimp, AutoCarousel } from "@/components";
+import styles from "@/components/HomeTechGrid.module.scss";
 
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 // --- Add useInView hook ---
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLElement | null>(null);
@@ -614,6 +617,7 @@ export default function Home() {
                     wrap
                     gap="40"
                     horizontal="center"
+                    className={styles.techGridHome}
                     style={{
                       width: "100%",
                       flexWrap: "wrap",
@@ -869,6 +873,7 @@ export default function Home() {
       {newsletter.display && (
         <InViewShow><Mailchimp newsletter={newsletter} /></InViewShow>
       )}
+      <ScrollToTopButton />
     </Column>
   );
 }

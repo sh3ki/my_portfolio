@@ -4,6 +4,7 @@ import { Meta, Schema, AvatarGroup, Button, Column, Flex, Heading, Media, Text }
 import { baseURL, about, person, projects } from "@/resources";
 import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX, AutoCarousel } from "@/components";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 import { Metadata } from "next";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
@@ -97,6 +98,7 @@ export default async function Project({
         <CustomMDX source={post.content} />
       </Column>
       <ScrollToHash />
+      <ScrollToTopButton />
     </Column>
   );
 }

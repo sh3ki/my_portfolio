@@ -27,6 +27,8 @@ export async function generateMetadata() {
   });
 }
 
+import ScrollToTopButton from "@/components/ScrollToTopButton";
+
 export default function About() {
   const structure =  [
     {
@@ -395,6 +397,7 @@ export default function About() {
           )}
         </Column>
       </Flex>
+      <ScrollToTopButton />
     </Column>
   );
 }

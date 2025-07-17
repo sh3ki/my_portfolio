@@ -1,6 +1,7 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
 import { newsletter, baseURL, technologies, person } from "@/resources";
 import { Mailchimp, TechSkillsGrid } from "@/components";
+import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 export default function TechnologiesPage() {
   Meta.generate({
@@ -36,6 +37,7 @@ export default function TechnologiesPage() {
       </div>
       <TechSkillsGrid />
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
+      <ScrollToTopButton />
     </Column>
   );
 }

@@ -1,0 +1,45 @@
+// Smaller, no background, no border, no shadow, only icon, animate scale on hover/click
+
+.scrollToTop {
+  position: fixed;
+  right: 2rem;
+  bottom: 2.5rem;
+  z-index: 1200;
+  background: none;
+  color: #fff;
+  border: none;
+  border-radius: 50%;
+  box-shadow: none;
+  padding: 0.12rem;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(40px) scale(0.8);
+  transition: opacity 0.3s, transform 0.3s;
+  pointer-events: none;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.scrollToTop.visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+  pointer-events: auto;
+}
+
+.scrollToTop:hover, .scrollToTop:focus {
+  transform: scale(1.18);
+  color: #fff;
+}
+
+@media (max-width: 768px) {
+  .scrollToTop {
+    right: 1.2rem;
+    bottom: 4.5rem; /* higher than nav/footer */
+    padding: 0.07rem;
+  }
+  .scrollToTop svg {
+    font-size: 0.3rem;
+  }
+}
