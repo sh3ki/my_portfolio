@@ -386,7 +386,7 @@ export default function Home() {
                 <Icon name="experience" size="l" color="neutralOnBrand" />
               </div>
               <div style={{ flex: 1 }}>
-                <div style={{ fontWeight: 700, fontSize: "2.2rem", color: "#3730a3", letterSpacing: "-0.02em" }}>2+</div>
+                <div style={{ fontWeight: 700, fontSize: "2.2rem", color: "#3730a3", letterSpacing: "-0.02em" }}>3+</div>
                 <div style={{ fontWeight: 600, fontSize: "1.1rem", color: "#6366f1", marginTop: 2 }}>Years Experience</div>
               </div>
             </div>
