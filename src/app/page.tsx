@@ -1,4 +1,3 @@
-
 "use client";
   import React, { useState, useRef, useEffect } from "react";
 
@@ -6,8 +5,8 @@ import { Heading, Flex, Text, Button, Avatar, RevealFx, Column, Badge, Row, Meta
 import { home, about, person, newsletter, baseURL, routes } from "@/resources";
 import { Mailchimp, AutoCarousel } from "@/components";
 import styles from "@/components/HomeTechGrid.module.scss";
-
 import ScrollToTopButton from "@/components/ScrollToTopButton";
+
 // --- Add useInView hook ---
 function useInView(threshold = 0.15) {
   const ref = useRef<HTMLElement | null>(null);
